@@ -6,9 +6,8 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lcdvi"]
 size = Vector2(1167, 160)
 
-[node name="Node2D" type="Node2D" unique_id=1346784935]
-
-[node name="player" parent="." unique_id=532741887 instance=ExtResource("1_sv2mw")]
+[node name="Jogo" type="Node2D" unique_id=1346784935]
+position = Vector2(57, 0)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1852941798]
 position = Vector2(591, 607)
@@ -21,3 +20,5 @@ shape = SubResource("RectangleShape2D_lcdvi")
 position = Vector2(7.9999995, 26)
 scale = Vector2(10.021484, 1.6093749)
 texture = ExtResource("2_l7i24")
+
+[node name="player" parent="." unique_id=532741887 instance=ExtResource("1_sv2mw")]
