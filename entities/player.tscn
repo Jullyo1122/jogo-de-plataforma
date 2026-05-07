@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://xtsi1hdh7gl5"]
+
+[ext_resource type="Script" uid="uid://bw5tp57a1uqlq" path="res://script/jogador.gd" id="1_dwuph"]
+[ext_resource type="Texture2D" uid="uid://c6rnanxxod7ca" path="res://sprites/3 Dude_Monster/Dude_Monster_Idle_4.png" id="2_b0kkn"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e4p34"]
+atlas = ExtResource("2_b0kkn")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rfe5m"]
+atlas = ExtResource("2_b0kkn")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qly61"]
+atlas = ExtResource("2_b0kkn")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qsoyl"]
+atlas = ExtResource("2_b0kkn")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6nm46"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e4p34")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rfe5m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qly61")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qsoyl")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_i623q"]
+radius = 50.0
+height = 194.0
+
+[node name="player" type="CharacterBody2D" unique_id=532741887]
+script = ExtResource("1_dwuph")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1045620344]
+texture_filter = 1
+position = Vector2(15, 29.000023)
+scale = Vector2(7.1562505, 7.2187505)
+sprite_frames = SubResource("SpriteFrames_6nm46")
+frame = 3
+frame_progress = 0.82190245
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=524383782]
+position = Vector2(8, 40)
+scale = Vector2(1, 0.99999976)
+shape = SubResource("CapsuleShape2D_i623q")
