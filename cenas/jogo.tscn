@@ -1,6 +1,0 @@
-[gd_scene format=3 uid="uid://ci0m4po47ftks"]
-
-[node name="Jogo" type="Node2D" unique_id=501128879]
-
-[node name="Jogador" type="CharacterBody2D" parent="." unique_id=2097261389]
-position = Vector2(1, 4)
