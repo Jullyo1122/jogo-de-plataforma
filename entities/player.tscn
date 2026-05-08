@@ -150,21 +150,29 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_i623q"]
-radius = 50.0
-height = 194.0
+radius = 23.000008
+height = 70.00003
 
 [node name="player" type="CharacterBody2D" unique_id=532741887]
 script = ExtResource("1_dwuph")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1045620344]
 texture_filter = 1
-position = Vector2(15, 29.000023)
-scale = Vector2(7.1562505, 7.2187505)
+position = Vector2(22, 29)
+scale = Vector2(2.5781255, 2.5156252)
 sprite_frames = SubResource("SpriteFrames_6nm46")
 animation = &"jump"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=524383782]
-position = Vector2(8, 40)
+position = Vector2(21, 30)
 scale = Vector2(1, 0.99999976)
 shape = SubResource("CapsuleShape2D_i623q")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=33257611]
+position = Vector2(-6, 2)
+limit_left = 0
+limit_top = 0
+limit_right = 6794
+limit_bottom = 700
+position_smoothing_speed = 15.0
