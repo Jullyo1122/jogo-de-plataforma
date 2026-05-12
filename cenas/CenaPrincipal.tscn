@@ -1,84 +1,85 @@
-[gd_scene format=3 uid="uid://c7si0obuvqqxi"]
+[gd_scene format=4 uid="uid://c7si0obuvqqxi"]
 
 [ext_resource type="PackedScene" uid="uid://xtsi1hdh7gl5" path="res://entities/player.tscn" id="1_3yqxd"]
-[ext_resource type="Texture2D" uid="uid://csneoekop6rkj" path="res://icon.svg" id="2_l4x42"]
+[ext_resource type="Texture2D" uid="uid://csf4k8ys0ke6i" path="res://sprites/Terrain (16 x 16).png" id="2_l4x42"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_3yqxd"]
-size = Vector2(2103, 101)
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_l4x42"]
+texture = ExtResource("2_l4x42")
+3:1/0 = 0
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, -0.17985725, -8, -0.17985725)
+3:1/0/physics_layer_0/polygon_0/one_way = true
+4:1/0 = 0
+4:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, -0.17985725, -8, -0.17985725)
+4:1/0/physics_layer_0/polygon_0/one_way = true
+5:1/0 = 0
+5:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, -0.17985725, -8, -0.17985725)
+5:1/0/physics_layer_0/polygon_0/one_way = true
+11:1/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+11:2/0 = 0
+1:3/0 = 0
+1:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:3/0 = 0
+2:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:3/0 = 0
+3:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+4:3/0 = 0
+4:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+5:3/0 = 0
+5:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+6:3/0 = 0
+6:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+7:3/0 = 0
+7:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+9:3/0 = 0
+10:3/0 = 0
+11:3/0 = 0
+12:3/0 = 0
+13:3/0 = 0
+15:3/0 = 0
+1:4/0 = 0
+1:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:4/0 = 0
+2:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:4/0 = 0
+3:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+4:4/0 = 0
+4:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+5:4/0 = 0
+5:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+6:4/0 = 0
+6:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+7:4/0 = 0
+7:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+11:4/0 = 0
+3:5/0 = 0
+3:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+4:5/0 = 0
+4:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+5:5/0 = 0
+5:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+11:5/0 = 0
+3:6/0 = 0
+3:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+4:6/0 = 0
+4:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+5:6/0 = 0
+5:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+4:8/0 = 0
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_l4x42"]
-size = Vector2(462.5, 119.5)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_rc77p"]
-size = Vector2(462.5, 65.875)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_7two4"]
-size = Vector2(2123, 126)
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_l4x42"]
-load_path = "res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex"
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_rc77p"]
-load_path = "res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex"
+[sub_resource type="TileSet" id="TileSet_7two4"]
+physics_layer_0/collision_layer = 1
+sources/1 = SubResource("TileSetAtlasSource_l4x42")
 
 [node name="Jogo" type="Node2D" unique_id=372988944]
 
 [node name="player" parent="." unique_id=532741887 instance=ExtResource("1_3yqxd")]
-position = Vector2(6, 11)
+z_index = 1
+position = Vector2(3, 5)
 
-[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=539171867]
-position = Vector2(585, 607)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=966856853]
-position = Vector2(451.5, 32.5)
-shape = SubResource("RectangleShape2D_3yqxd")
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=771807928]
-position = Vector2(1963.5, 23.75)
-shape = SubResource("RectangleShape2D_l4x42")
-
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D" unique_id=1407569932]
-position = Vector2(2556, -162)
-shape = SubResource("RectangleShape2D_l4x42")
-
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D" unique_id=1361854569]
-position = Vector2(3107, -310)
-shape = SubResource("RectangleShape2D_l4x42")
-
-[node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D" unique_id=1338430262]
-position = Vector2(3724, -195.0625)
-shape = SubResource("RectangleShape2D_rc77p")
-
-[node name="CollisionShape2D8" type="CollisionShape2D" parent="StaticBody2D" unique_id=746504007]
-position = Vector2(5199, -22)
-shape = SubResource("RectangleShape2D_7two4")
-
-[node name="Icon" type="Sprite2D" parent="StaticBody2D" unique_id=523412142]
-position = Vector2(432.62497, 52.000015)
-scale = Vector2(17.72461, 1.1093748)
-texture = ExtResource("2_l4x42")
-
-[node name="Icon8" type="Sprite2D" parent="StaticBody2D" unique_id=1480526741]
-position = Vector2(5176, -21)
-scale = Vector2(16.601564, 1.1093748)
-texture = ExtResource("2_l4x42")
-
-[node name="Icon2" type="Sprite2D" parent="StaticBody2D" unique_id=1979180519]
-position = Vector2(1956, 31.000015)
-scale = Vector2(3.6914074, 1.1093748)
-texture = SubResource("CompressedTexture2D_l4x42")
-
-[node name="Icon3" type="Sprite2D" parent="StaticBody2D" unique_id=1485848896]
-position = Vector2(2558, -158.99998)
-scale = Vector2(3.6914074, 1.1093748)
-texture = SubResource("CompressedTexture2D_l4x42")
-
-[node name="Icon4" type="Sprite2D" parent="StaticBody2D" unique_id=191188211]
-position = Vector2(3105, -308)
-scale = Vector2(3.6914074, 1.1093748)
-texture = SubResource("CompressedTexture2D_l4x42")
-
-[node name="Icon5" type="Sprite2D" parent="StaticBody2D" unique_id=499386177]
-position = Vector2(3707, -202)
-scale = Vector2(3.6914074, 0.5781249)
-texture = SubResource("CompressedTexture2D_rc77p")
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=131761257]
+position = Vector2(49, 115)
+tile_map_data = PackedByteArray("AAAJAA8AAgAAAAAAAAAJABAAAgAAAAAAAAAJABEAAgAAAAAAAAACAAkAAQAEAAQAAAADAAkAAQAEAAQAAAAEAAkAAQAEAAQAAAAFAAkAAQAEAAQAAAAGAAkAAQAEAAQAAAAIAAkAAQAEAAQAAAAHAAkAAQAEAAQAAAAJAAkAAQAEAAQAAAAKAAkAAQAEAAQAAAALAAoAAQACAAQAAAALAAsAAAAAAAAAAAALAAwAAAAAAAAAAAALAA4AAAAAAAAAAAALAA0AAAAAAAAAAAD9/wYAAQABAAMAAAAEAAUAAAADAAEAAAAFAAUAAAAEAAEAAAAGAAUAAQADAAUAAAAHAAUAAQAEAAQAAAAIAAUAAQAEAAQAAAAJAAUAAQAEAAQAAAAKAAQAAQACAAMAAAALAAQAAQACAAMAAAAMAAQAAQACAAMAAAANAAQAAQACAAMAAAAOAAQAAQAGAAMAAAAPAAQAAQAGAAMAAAAQAAQAAQAGAAMAAAARAAQAAQAGAAMAAAASAAQAAQAGAAMAAAATAAQAAQAGAAMAAAAUAAQAAQAGAAMAAAAVAAQAAQAHAAMAAAAVAAUAAQAFAAUAAAAVAAYAAQAFAAUAAAAVAAcAAQAFAAUAAAAVAAgAAQAFAAUAAAAVAAkAAQAFAAUAAAAVAAoAAQAFAAYAAAD9/wcAAQADAAUAAAD9/wgAAQADAAUAAAD9/wkAAQADAAUAAAD9/woAAQABAAQAAAD+/woAAQACAAQAAAD//woAAQACAAQAAAAAAAoAAQACAAQAAAABAAoAAQACAAQAAAACAAoAAQACAAQAAAADAAoAAQACAAQAAAAEAAoAAQACAAQAAAAFAAoAAQACAAQAAAAGAAoAAQACAAQAAAAHAAoAAQACAAQAAAAIAAoAAQACAAQAAAAJAAoAAQACAAQAAAAKAAoAAQACAAQAAAAMAAoAAQACAAQAAAANAAoAAQACAAQAAAAOAAoAAQACAAQAAAAPAAoAAQACAAQAAAAQAAoAAQACAAQAAAARAAoAAQACAAQAAAASAAoAAQACAAQAAAATAAoAAQACAAQAAAAUAAoAAQACAAQAAAAEAAgAAQAEAAQAAAAEAAcAAQAEAAQAAAAFAAcAAQAEAAQAAAAFAAgAAQAEAAQAAAAGAAgAAQAEAAQAAAAGAAcAAQAEAAQAAAAHAAYAAQAEAAQAAAAHAAcAAQAEAAQAAAAHAAgAAQAEAAQAAAAIAAgAAQAEAAQAAAAIAAcAAQAEAAQAAAAIAAYAAQAEAAQAAAAJAAYAAQAEAAQAAAAJAAcAAQAEAAQAAAAJAAgAAQAEAAQAAAAKAAgAAQAEAAQAAAAKAAcAAQAEAAQAAAAKAAYAAQAEAAQAAAAKAAUAAQAEAAQAAAALAAUAAQAEAAQAAAALAAYAAQAEAAQAAAALAAcAAQAEAAQAAAALAAgAAQAEAAQAAAALAAkAAQAEAAQAAAAMAAkAAQAEAAQAAAAMAAgAAQAEAAQAAAAMAAcAAQAEAAQAAAAMAAYAAQAEAAQAAAAMAAUAAQAEAAQAAAANAAUAAQAEAAQAAAANAAYAAQAEAAQAAAANAAcAAQAEAAQAAAANAAgAAQAEAAQAAAANAAkAAQAEAAQAAAAOAAkAAQAEAAQAAAAOAAgAAQAEAAQAAAAOAAcAAQAEAAQAAAAOAAYAAQAEAAQAAAAOAAUAAQAEAAQAAAAPAAUAAQAEAAQAAAAPAAYAAQAEAAQAAAAPAAcAAQAEAAQAAAAPAAgAAQAEAAQAAAAPAAkAAQAEAAQAAAAQAAkAAQAEAAQAAAAQAAgAAQAEAAQAAAAQAAcAAQAEAAQAAAAQAAYAAQAEAAQAAAAQAAUAAQAEAAQAAAARAAUAAQAEAAQAAAARAAYAAQAEAAQAAAARAAcAAQAEAAQAAAARAAgAAQAEAAQAAAARAAkAAQAEAAQAAAASAAkAAQAEAAQAAAASAAgAAQAEAAQAAAASAAcAAQAEAAQAAAASAAYAAQAEAAQAAAASAAUAAQAEAAQAAAATAAUAAQAEAAQAAAATAAYAAQAEAAQAAAATAAcAAQAEAAQAAAATAAgAAQAEAAQAAAATAAkAAQAEAAQAAAAUAAkAAQAEAAQAAAAUAAgAAQAEAAQAAAAUAAcAAQAEAAQAAAAUAAYAAQAEAAQAAAAUAAUAAQAEAAQAAAADAAcAAQAEAAQAAAACAAcAAQAEAAQAAAABAAcAAQAEAAQAAAAAAAcAAQAEAAQAAAD//wcAAQAEAAQAAAD+/wcAAQAEAAQAAAD+/wgAAQAEAAQAAAD+/wkAAQAEAAQAAAD//wkAAQAEAAQAAAD//wgAAQAEAAQAAAAAAAgAAQAEAAQAAAAAAAkAAQAEAAQAAAABAAkAAQAEAAQAAAABAAgAAQAEAAQAAAACAAgAAQAEAAQAAAADAAgAAQAEAAQAAAAGAAQAAQABAAMAAAAHAAQAAQACAAMAAAAIAAQAAQACAAMAAAAJAAQAAQACAAMAAAAKAAIAAQADAAEAAAAKAAMAAQADAAIAAAALAAIAAQAEAAEAAAALAAMAAQAEAAIAAAAMAAIAAQAFAAEAAAAMAAMAAQAFAAIAAAD+/wYAAQACAAMAAAD//wYAAQACAAMAAAAAAAYAAQACAAMAAAABAAYAAQACAAMAAAACAAYAAQACAAMAAAADAAYAAQACAAMAAAAEAAYAAQACAAMAAAAFAAYAAQACAAMAAAAGAAYAAQADAAQAAAA=")
+tile_set = SubResource("TileSet_7two4")
