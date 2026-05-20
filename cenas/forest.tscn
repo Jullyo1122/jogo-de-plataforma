@@ -70,46 +70,64 @@ motion_scale = Vector2(0.1, 0.1)
 motion_mirroring = Vector2(288, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/6" unique_id=1586227552]
+texture_repeat = 2
 texture = ExtResource("3_pyllb")
 centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 576, 208)
 
 [node name="5" type="ParallaxLayer" parent="ParallaxBackground" unique_id=1755145812]
 motion_scale = Vector2(0.2, 0.2)
 motion_mirroring = Vector2(288, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/5" unique_id=245442295]
+texture_repeat = 2
 texture = ExtResource("4_g8n0t")
 centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 576, 208)
 
 [node name="4" type="ParallaxLayer" parent="ParallaxBackground" unique_id=232382807]
 motion_scale = Vector2(0.3, 0.3)
 motion_mirroring = Vector2(288, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/4" unique_id=1463355185]
+texture_repeat = 2
 texture = ExtResource("5_eagp0")
 centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 576, 208)
 
 [node name="3" type="ParallaxLayer" parent="ParallaxBackground" unique_id=626991589]
 motion_scale = Vector2(0.4, 0.4)
 motion_mirroring = Vector2(288, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/3" unique_id=351859476]
+texture_repeat = 2
 texture = ExtResource("6_f7cnu")
 centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 576, 208)
 
 [node name="2" type="ParallaxLayer" parent="ParallaxBackground" unique_id=417660056]
 motion_scale = Vector2(0.5, 0.5)
 motion_mirroring = Vector2(288, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/2" unique_id=701157344]
+texture_repeat = 2
 texture = ExtResource("7_1vuwj")
 centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 576, 208)
 
 [node name="1" type="ParallaxLayer" parent="ParallaxBackground" unique_id=670728339]
 motion_scale = Vector2(1.5, 1.5)
 motion_mirroring = Vector2(288, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/1" unique_id=571342241]
+texture_repeat = 2
 position = Vector2(0, -11)
 texture = ExtResource("8_8c8og")
 centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 576, 208)
