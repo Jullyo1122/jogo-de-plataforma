@@ -286,10 +286,11 @@ radius = 8.0
 height = 36.0
 
 [node name="player2" type="CharacterBody2D" unique_id=2116014508]
-z_index = 1
+z_index = 2
 script = ExtResource("1_kr3fw")
 
 [node name="AnimacaoGirl" type="AnimatedSprite2D" parent="." unique_id=636558947]
+z_index = 2
 position = Vector2(40.6875, 28)
 scale = Vector2(0.13437499, 0.14375004)
 sprite_frames = SubResource("SpriteFrames_dnlsw")
@@ -303,7 +304,7 @@ shape = SubResource("CapsuleShape2D_1a1hd")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1278082462]
 position = Vector2(201, 104)
-limit_left = -1
-limit_top = -1
-limit_right = 6793
-limit_bottom = 205
+limit_left = -2
+limit_top = 0
+limit_right = 6792
+limit_bottom = 206
