@@ -1,5 +1,9 @@
 extends Sprite2D
-@onready var camera = $"../player2/Camera2D"
+
+@onready var camera = $"../../../player2/Camera2D"
+
+var offset_x = 250
 
 func _process(delta):
-	global_position.x = camera.global_position.x
+	if camera:
+		position.x = camera.position.x + offset_x
