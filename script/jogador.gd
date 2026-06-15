@@ -1,11 +1,77 @@
 extends CharacterBody2D
 @onready var anim: AnimatedSprite2D = $AnimatedSprite2D
 
+enum PlayerState{
+	idle,
+	run,
+	jump
+}
+
 const SPEED = 200.0
 const JUMP_VELOCITY = -300.0
 
+var status = PlayerState
+
+func _ready() -> void:
+	go_to_idle_state()
 
 func _physics_process(delta: float) -> void:
+	
+	if not is_on_floor():
+		velocity += get_gravity() * delta
+		
+		
+	match status:
+		
+		PlayerState.idle:
+			idle_state()
+		PlayerState.run:
+			run_state()
+		PlayerState.jump:
+			jump_state()
+			
+	move_and_slide()
+
+func go_to_idle_state():
+	status = PlayerState.idle
+	anim.play("idle")
+
+func go_to_run_state():
+	status = PlayerState.run
+	anim.play("run")
+	
+func go_to_jump_state():
+	status = PlayerState.jump
+	anim.play("jump")
+	
+func idle_state():
+	move()
+
+func run_state():
+	move()
+
+func jump_state():
+	move()
+
+func move():
+	var direction := Input.get_axis("left", "right")
+	if direction:
+		velocity.x = direction * SPEED
+	else:
+		velocity.x = move_toward(velocity.x, 0, SPEED)
+
+
+
+
+
+
+
+
+
+
+
+
+func temp(delta: float) -> void:
 	 # Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
@@ -16,27 +82,4 @@ func _physics_process(delta: float) -> void:
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
-	var direction := Input.get_axis("left", "right")
-	if direction:
-		velocity.x = direction * SPEED
-	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
 	
-	if is_on_floor():
-			
-		if direction > 0:
-			anim.flip_h = false
-			anim.play("run")
-
-		elif direction < 0:
-			anim.flip_h = true
-			anim.play("run")
-		else:
-			anim.play("idle")
-	else:
-		anim.play("jump")
-	
-	
-		
-
-	move_and_slide()
