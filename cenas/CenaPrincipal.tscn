@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://bj30plpko40o1" path="res://sprites/verde/Background_0.png" id="6_ahw13"]
 [ext_resource type="Script" uid="uid://uvnwgayjy23x" path="res://cenas/backg.gd" id="7_xumti"]
 [ext_resource type="Texture2D" uid="uid://bwokhw5fgjlct" path="res://sprites/verde/Grass_background_2.png" id="8_5ap0d"]
+[ext_resource type="PackedScene" uid="uid://dhw0lpbol04oj" path="res://entities/enemy.tscn" id="11_76hco"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7two4"]
 texture = ExtResource("3_rc77p")
@@ -2646,3 +2647,5 @@ position = Vector2(424.99997, 171)
 scale = Vector2(1.2402344, 1.2944711)
 texture = ExtResource("6_ahw13")
 script = ExtResource("7_xumti")
+
+[node name="enemy" parent="." unique_id=1257984357 instance=ExtResource("11_76hco")]

@@ -35,21 +35,22 @@ func _physics_process(delta: float) -> void:
 
 func go_to_idle_state():
 	status = PlayerState.idle
-	anim.play("idle")
+	anim.play("Idle")
 
 func go_to_run_state():
 	status = PlayerState.run
-	anim.play("run")
+	anim.play("Run")
 	
 func go_to_jump_state():
 	status = PlayerState.jump
-	anim.play("jump")
+	anim.play("Jump")
 	velocity.y = JUMP_VELOCITY
 	
 func idle_state():
 	move()
 	if velocity.x != 0:
 		go_to_run_state()
+		return
 	
 	if Input.is_action_just_pressed("jump"):
 		go_to_jump_state()
@@ -74,6 +75,7 @@ func jump_state():
 		else:
 			go_to_run_state()
 		return
+	
 
 func move():
 	var direction := Input.get_axis("left", "right")
