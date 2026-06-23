@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dhw0lpbol04oj"]
 
 [ext_resource type="Texture2D" uid="uid://c2yhwvbp3pibd" path="res://sprites/Bat/fly.png" id="1_p7g5j"]
+[ext_resource type="Script" uid="uid://dva4f3eoe7wld" path="res://entities/enemy.gd" id="1_pqhw6"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pqhw6"]
 atlas = ExtResource("1_p7g5j")
@@ -84,17 +85,45 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
-"speed": 5.0
+"speed": 10.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hijg5"]
 size = Vector2(31, 17)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pqhw6"]
+size = Vector2(57, 49)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pqhw6"]
+radius = 272.02942
+
 [node name="enemy" type="CharacterBody2D" unique_id=1257984357]
+z_index = 2
+script = ExtResource("1_pqhw6")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=756817651]
+position = Vector2(2, -1)
 sprite_frames = SubResource("SpriteFrames_5ku5l")
+frame = 10
+frame_progress = 0.10585607
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=278073084]
 position = Vector2(7.5, 8.5)
 shape = SubResource("RectangleShape2D_hijg5")
+
+[node name="HitBox" type="Area2D" parent="." unique_id=1735076430]
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox" unique_id=819596824]
+position = Vector2(5.5, -4.5)
+shape = SubResource("RectangleShape2D_pqhw6")
+debug_color = Color(0.94682616, 4.235506e-06, 0.5882941, 0.41960785)
+
+[node name="DetectionArea" type="Area2D" parent="." unique_id=1186854069]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea" unique_id=1086319796]
+position = Vector2(109, 122)
+shape = SubResource("CircleShape2D_pqhw6")
+
+[connection signal="body_entered" from="DetectionArea" to="." method="_on_detection_area_body_entered"]

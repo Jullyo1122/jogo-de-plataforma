@@ -4,7 +4,8 @@ extends CharacterBody2D
 enum PlayerState{
 	idle,
 	run,
-	jump
+	jump,
+	demage
 }
 @onready var anim: AnimatedSprite2D = $AnimacaoGirl
 
@@ -12,8 +13,9 @@ const SPEED = 200.0
 const JUMP_VELOCITY = -300.0
 
 var status = PlayerState
-
-func _ready() -> void:
+		
+func _ready() -> void:	
+	add_to_group("player")
 	go_to_idle_state()
 
 func _physics_process(delta: float) -> void:
@@ -30,6 +32,8 @@ func _physics_process(delta: float) -> void:
 			run_state()
 		PlayerState.jump:
 			jump_state()
+		PlayerState.demage:
+			demage_state()
 			
 	move_and_slide()
 
@@ -45,6 +49,10 @@ func go_to_jump_state():
 	status = PlayerState.jump
 	anim.play("Jump")
 	velocity.y = JUMP_VELOCITY
+
+func go_to_demage_state():
+	status = PlayerState.demage
+	anim.play("Demage")
 	
 func idle_state():
 	move()
@@ -75,7 +83,9 @@ func jump_state():
 		else:
 			go_to_run_state()
 		return
-	
+
+func demage_state():
+	pass
 
 func move():
 	var direction := Input.get_axis("left", "right")
@@ -88,3 +98,11 @@ func move():
 		anim.flip_h = true 
 	elif direction > 0:
 		anim.flip_h = false
+
+func _on_hit_box_area_entered(area):
+	print(area.name)
+	print(area.get_groups())
+
+	if area.is_in_group("enemy_attack"):
+		print("Tomou dano")
+		go_to_demage_state()
