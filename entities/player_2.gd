@@ -5,7 +5,8 @@ enum PlayerState{
 	idle,
 	run,
 	jump,
-	demage
+	demage,
+	attack
 }
 @onready var anim: AnimatedSprite2D = $AnimacaoGirl
 
@@ -34,6 +35,8 @@ func _physics_process(delta: float) -> void:
 			jump_state()
 		PlayerState.demage:
 			demage_state()
+		PlayerState.attack:
+			attack_state()
 			
 	move_and_slide()
 
@@ -54,6 +57,11 @@ func go_to_demage_state():
 	status = PlayerState.demage
 	anim.play("Demage")
 	
+func go_to_attack_state():
+	status = PlayerState.attack
+	anim.play("Attack")
+	velocity.x = 0
+	
 func idle_state():
 	move()
 	if velocity.x != 0:
@@ -62,6 +70,10 @@ func idle_state():
 	
 	if Input.is_action_just_pressed("jump"):
 		go_to_jump_state()
+		return
+	
+	if Input.is_action_just_pressed("attack"):
+		go_to_attack_state()
 		return
 	
 
@@ -74,6 +86,11 @@ func run_state():
 		go_to_jump_state()
 		return
 	
+	if Input.is_action_just_pressed("attack"):
+		go_to_attack_state()
+		return
+
+	
 
 func jump_state():
 	move()
@@ -83,9 +100,17 @@ func jump_state():
 		else:
 			go_to_run_state()
 		return
+		
+	if Input.is_action_just_pressed("attack"):
+		go_to_attack_state()
+		return
 
 func demage_state():
 	pass
+	
+func attack_state():
+	if !anim.is_playing():
+		go_to_idle_state()
 
 func move():
 	var direction := Input.get_axis("left", "right")

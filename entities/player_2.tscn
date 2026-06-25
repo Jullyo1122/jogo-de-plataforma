@@ -198,7 +198,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_bobvm")
 }],
-"loop": true,
+"loop": false,
 "name": &"Attack",
 "speed": 10.0
 }, {
@@ -338,10 +338,8 @@ z_index = 2
 position = Vector2(40.6875, 28)
 scale = Vector2(0.13437499, 0.14375004)
 sprite_frames = SubResource("SpriteFrames_dnlsw")
-animation = &"Demage"
+animation = &"Attack"
 autoplay = "Idle"
-frame = 4
-frame_progress = 0.71670514
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1651766809]
 position = Vector2(41, 27)

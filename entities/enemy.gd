@@ -21,13 +21,19 @@ func _physics_process(delta):
 
 		BatState.ATTACK:
 			attack()
-
+	update_sprite_direction()
 	move_and_slide()
-	
+
+func update_sprite_direction():
+	if velocity.x > 0:
+		$AnimatedSprite2D.flip_h = false
+	elif velocity.x < 0:
+		$AnimatedSprite2D.flip_h = true
+		
 func patrol(delta):
 	time += delta
 
-	velocity.x = speed
+	velocity.x = -speed
 	velocity.y = sin(time * frequency) * amplitude
 	
 func _on_detection_area_body_entered(body):
