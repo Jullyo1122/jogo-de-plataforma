@@ -2,6 +2,51 @@
 
 [ext_resource type="Texture2D" uid="uid://c2yhwvbp3pibd" path="res://sprites/Bat/fly.png" id="1_p7g5j"]
 [ext_resource type="Script" uid="uid://dva4f3eoe7wld" path="res://entities/enemy.gd" id="1_pqhw6"]
+[ext_resource type="Texture2D" uid="uid://bjop0bpkj8uku" path="res://sprites/Bat/attack.png" id="2_b4nis"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5ku5l"]
+atlas = ExtResource("2_b4nis")
+region = Rect2(0, 0, 87, 87)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hijg5"]
+atlas = ExtResource("2_b4nis")
+region = Rect2(87, 0, 87, 87)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ae2me"]
+atlas = ExtResource("2_b4nis")
+region = Rect2(174, 0, 87, 87)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fp52m"]
+atlas = ExtResource("2_b4nis")
+region = Rect2(261, 0, 87, 87)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s5aq6"]
+atlas = ExtResource("2_b4nis")
+region = Rect2(348, 0, 87, 87)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_od71d"]
+atlas = ExtResource("2_b4nis")
+region = Rect2(435, 0, 87, 87)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hjq3p"]
+atlas = ExtResource("2_b4nis")
+region = Rect2(522, 0, 87, 87)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gdhdb"]
+atlas = ExtResource("2_b4nis")
+region = Rect2(609, 0, 87, 87)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_raxss"]
+atlas = ExtResource("2_b4nis")
+region = Rect2(696, 0, 87, 87)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l6mrk"]
+atlas = ExtResource("2_b4nis")
+region = Rect2(783, 0, 87, 87)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_osk6j"]
+atlas = ExtResource("2_b4nis")
+region = Rect2(870, 0, 87, 87)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pqhw6"]
 atlas = ExtResource("1_p7g5j")
@@ -51,6 +96,44 @@ region = Rect2(870, 0, 87, 87)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_5ku5l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hijg5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ae2me")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fp52m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s5aq6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_od71d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hjq3p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gdhdb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_raxss")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l6mrk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_osk6j")
+}],
+"loop": true,
+"name": &"attack",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_pqhw6")
 }, {
 "duration": 1.0,
@@ -84,7 +167,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_nfp2m")
 }],
 "loop": true,
-"name": &"default",
+"name": &"patrol",
 "speed": 10.0
 }]
 
@@ -95,17 +178,17 @@ size = Vector2(31, 17)
 size = Vector2(57, 49)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_pqhw6"]
-radius = 272.02942
+radius = 78.51752
 
 [node name="enemy" type="CharacterBody2D" unique_id=1257984357]
 z_index = 2
 script = ExtResource("1_pqhw6")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=756817651]
+[node name="Animacaobat" type="AnimatedSprite2D" parent="." unique_id=756817651]
 position = Vector2(2, -1)
 sprite_frames = SubResource("SpriteFrames_5ku5l")
-frame = 10
-frame_progress = 0.10585607
+animation = &"attack"
+frame_progress = 0.8689892
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=278073084]
 position = Vector2(7.5, 8.5)
@@ -123,7 +206,10 @@ debug_color = Color(0.94682616, 4.235506e-06, 0.5882941, 0.41960785)
 [node name="DetectionArea" type="Area2D" parent="." unique_id=1186854069]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea" unique_id=1086319796]
-position = Vector2(109, 122)
+position = Vector2(7, 2)
 shape = SubResource("CircleShape2D_pqhw6")
 
+[node name="AttackCooldown" type="Timer" parent="." unique_id=1150983718]
+
 [connection signal="body_entered" from="DetectionArea" to="." method="_on_detection_area_body_entered"]
+[connection signal="timeout" from="AttackCooldown" to="." method="_on_attack_cooldown_timeout"]
