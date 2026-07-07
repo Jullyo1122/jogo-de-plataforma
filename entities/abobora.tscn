@@ -1,0 +1,74 @@
+[gd_scene format=3 uid="uid://73gc1p1tyxvu"]
+
+[ext_resource type="Script" uid="uid://lwo5u5t3a16o" path="res://entities/abobora.gd" id="1_ucvla"]
+[ext_resource type="Texture2D" uid="uid://dmib2ju73tu8p" path="res://sprites/aboborasprites/idle.png" id="1_usp30"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_usp30"]
+radius = 8.0
+height = 24.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2m3fg"]
+atlas = ExtResource("1_usp30")
+region = Rect2(0, 0, 192, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nvt8n"]
+atlas = ExtResource("1_usp30")
+region = Rect2(192, 0, 192, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xque0"]
+atlas = ExtResource("1_usp30")
+region = Rect2(384, 0, 192, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yvvqw"]
+atlas = ExtResource("1_usp30")
+region = Rect2(576, 0, 192, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h0rwg"]
+atlas = ExtResource("1_usp30")
+region = Rect2(768, 0, 192, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3e6jc"]
+atlas = ExtResource("1_usp30")
+region = Rect2(960, 0, 192, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tnt7l"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2m3fg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nvt8n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xque0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yvvqw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h0rwg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3e6jc")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 10.0
+}]
+
+[node name="abobora" type="CharacterBody2D" unique_id=1271816387]
+visibility_layer = 2
+script = ExtResource("1_ucvla")
+
+[node name="Collisionabobora" type="CollisionShape2D" parent="." unique_id=575152712]
+position = Vector2(2, 54)
+rotation = 6.2831855
+shape = SubResource("CapsuleShape2D_usp30")
+
+[node name="Animatedabobora" type="AnimatedSprite2D" parent="." unique_id=94778645]
+position = Vector2(46, 47)
+scale = Vector2(1.1367189, 1.1386719)
+sprite_frames = SubResource("SpriteFrames_tnt7l")
+animation = &"Idle"
+frame_progress = 0.30500337

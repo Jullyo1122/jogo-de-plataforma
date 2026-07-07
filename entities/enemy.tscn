@@ -190,7 +190,7 @@ sprite_frames = SubResource("SpriteFrames_5ku5l")
 animation = &"attack"
 frame_progress = 0.8689892
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=278073084]
+[node name="Collisionenemy" type="CollisionShape2D" parent="." unique_id=278073084]
 position = Vector2(7.5, 8.5)
 shape = SubResource("RectangleShape2D_hijg5")
 

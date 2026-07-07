@@ -11,6 +11,7 @@
 [ext_resource type="Script" uid="uid://uvnwgayjy23x" path="res://cenas/backg.gd" id="7_xumti"]
 [ext_resource type="Texture2D" uid="uid://bwokhw5fgjlct" path="res://sprites/verde/Grass_background_2.png" id="8_5ap0d"]
 [ext_resource type="PackedScene" uid="uid://dhw0lpbol04oj" path="res://entities/enemy.tscn" id="11_76hco"]
+[ext_resource type="PackedScene" uid="uid://73gc1p1tyxvu" path="res://entities/abobora.tscn" id="12_pfph4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7two4"]
 texture = ExtResource("3_rc77p")
@@ -2650,3 +2651,12 @@ script = ExtResource("7_xumti")
 
 [node name="enemy" parent="." unique_id=1257984357 instance=ExtResource("11_76hco")]
 position = Vector2(1315, 117)
+
+[node name="abobora" parent="." unique_id=1271816387 instance=ExtResource("12_pfph4")]
+z_index = 3
+position = Vector2(414, 4)
+
+[node name="abobora2" parent="." unique_id=344571580 instance=ExtResource("12_pfph4")]
+visibility_layer = 1
+z_index = 3
+position = Vector2(332, 5)

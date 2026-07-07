@@ -156,7 +156,7 @@ height = 22.000008
 [node name="player" type="CharacterBody2D" unique_id=532741887]
 script = ExtResource("1_dwuph")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1045620344]
+[node name="Animacaoplayer" type="AnimatedSprite2D" parent="." unique_id=1045620344]
 texture_filter = 1
 position = Vector2(2.187492, 1.9374909)
 scale = Vector2(0.8632818, 0.87890685)
@@ -165,7 +165,7 @@ animation = &"run"
 autoplay = "idle"
 frame_progress = 0.58936816
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=524383782]
+[node name="Collisionplayer" type="CollisionShape2D" parent="." unique_id=524383782]
 position = Vector2(2, 3.999999)
 scale = Vector2(1, 0.99999976)
 shape = SubResource("CapsuleShape2D_rfe5m")
