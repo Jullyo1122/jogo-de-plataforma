@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://lwo5u5t3a16o" path="res://entities/abobora.gd" id="1_ucvla"]
 [ext_resource type="Texture2D" uid="uid://dmib2ju73tu8p" path="res://sprites/aboborasprites/idle.png" id="1_usp30"]
+[ext_resource type="Texture2D" uid="uid://bjuprmom4enkn" path="res://sprites/aboborasprites/run.png" id="3_nvt8n"]
+[ext_resource type="Texture2D" uid="uid://b4t60swka20wf" path="res://sprites/aboborasprites/attack-2.png" id="4_xque0"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_usp30"]
 radius = 8.0
@@ -31,6 +33,50 @@ region = Rect2(768, 0, 192, 128)
 atlas = ExtResource("1_usp30")
 region = Rect2(960, 0, 192, 128)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_tnt7l"]
+atlas = ExtResource("3_nvt8n")
+region = Rect2(0, 0, 192, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4rvus"]
+atlas = ExtResource("3_nvt8n")
+region = Rect2(192, 0, 192, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dlr7o"]
+atlas = ExtResource("3_nvt8n")
+region = Rect2(384, 0, 192, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6sw2s"]
+atlas = ExtResource("3_nvt8n")
+region = Rect2(576, 0, 192, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jc7be"]
+atlas = ExtResource("4_xque0")
+region = Rect2(0, 0, 192, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b8jic"]
+atlas = ExtResource("4_xque0")
+region = Rect2(192, 0, 192, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fba0b"]
+atlas = ExtResource("4_xque0")
+region = Rect2(384, 0, 192, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ltgw7"]
+atlas = ExtResource("4_xque0")
+region = Rect2(576, 0, 192, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nr2ue"]
+atlas = ExtResource("4_xque0")
+region = Rect2(768, 0, 192, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xceit"]
+atlas = ExtResource("4_xque0")
+region = Rect2(960, 0, 192, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6fn5g"]
+atlas = ExtResource("4_xque0")
+region = Rect2(1152, 0, 192, 128)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_tnt7l"]
 animations = [{
 "frames": [{
@@ -55,6 +101,49 @@ animations = [{
 "loop": true,
 "name": &"Idle",
 "speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tnt7l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4rvus")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dlr7o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6sw2s")
+}],
+"loop": true,
+"name": &"Run",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jc7be")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b8jic")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fba0b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ltgw7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nr2ue")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xceit")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6fn5g")
+}],
+"loop": true,
+"name": &"attack",
+"speed": 5.0
 }]
 
 [node name="abobora" type="CharacterBody2D" unique_id=1271816387]
@@ -70,5 +159,12 @@ shape = SubResource("CapsuleShape2D_usp30")
 position = Vector2(46, 47)
 scale = Vector2(1.1367189, 1.1386719)
 sprite_frames = SubResource("SpriteFrames_tnt7l")
-animation = &"Idle"
-frame_progress = 0.30500337
+animation = &"attack"
+frame = 1
+frame_progress = 0.6094602
+
+[node name="DetectionArea" type="Area2D" parent="." unique_id=388115958]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea" unique_id=1657340065]
+
+[node name="AttackTimer" type="Timer" parent="." unique_id=468389767]
