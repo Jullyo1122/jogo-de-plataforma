@@ -106,7 +106,9 @@ func jump_state():
 		return
 
 func demage_state():
-	pass
+	status = PlayerState.demage
+	anim.play("Demage")
+	velocity.x = 0
 	
 func attack_state():
 	if !anim.is_playing():

@@ -5,10 +5,6 @@
 [ext_resource type="Texture2D" uid="uid://bjuprmom4enkn" path="res://sprites/aboborasprites/run.png" id="3_nvt8n"]
 [ext_resource type="Texture2D" uid="uid://b4t60swka20wf" path="res://sprites/aboborasprites/attack-2.png" id="4_xque0"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_usp30"]
-radius = 8.0
-height = 24.0
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_2m3fg"]
 atlas = ExtResource("1_usp30")
 region = Rect2(0, 0, 192, 128)
@@ -141,30 +137,38 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_6fn5g")
 }],
-"loop": true,
+"loop": false,
 "name": &"attack",
 "speed": 5.0
 }]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_usp30"]
+radius = 8.0
+height = 24.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nvt8n"]
+radius = 38.078865
 
 [node name="abobora" type="CharacterBody2D" unique_id=1271816387]
 visibility_layer = 2
 script = ExtResource("1_ucvla")
 
+[node name="Animatedabobora" type="AnimatedSprite2D" parent="." unique_id=94778645]
+position = Vector2(-3.8146973e-06, 0)
+scale = Vector2(0.96419275, 0.991211)
+sprite_frames = SubResource("SpriteFrames_tnt7l")
+animation = &"Run"
+offset = Vector2(-40, 0)
+
 [node name="Collisionabobora" type="CollisionShape2D" parent="." unique_id=575152712]
-position = Vector2(2, 54)
 rotation = 6.2831855
 shape = SubResource("CapsuleShape2D_usp30")
-
-[node name="Animatedabobora" type="AnimatedSprite2D" parent="." unique_id=94778645]
-position = Vector2(46, 47)
-scale = Vector2(1.1367189, 1.1386719)
-sprite_frames = SubResource("SpriteFrames_tnt7l")
-animation = &"attack"
-frame = 1
-frame_progress = 0.6094602
 
 [node name="DetectionArea" type="Area2D" parent="." unique_id=388115958]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea" unique_id=1657340065]
+light_mask = 2
+position = Vector2(-1, 0)
+shape = SubResource("CircleShape2D_nvt8n")
 
 [node name="AttackTimer" type="Timer" parent="." unique_id=468389767]

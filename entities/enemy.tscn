@@ -178,7 +178,7 @@ size = Vector2(31, 17)
 size = Vector2(57, 49)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_pqhw6"]
-radius = 78.51752
+radius = 78.10249
 
 [node name="enemy" type="CharacterBody2D" unique_id=1257984357]
 z_index = 2

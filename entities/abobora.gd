@@ -2,18 +2,17 @@ extends CharacterBody2D
 
 const SPEED = 100.0
 
-@onready var anim = $Animatedabobora
-@onready var detection = $DetectionArea
-@onready var attack_timer = $AttackTimer
+@onready var anim: AnimatedSprite2D = $Animatedabobora
+@onready var detection: Area2D = $DetectionArea
+@onready var attack_timer: Timer = $AttackTimer
 
-enum AboboraState{
+enum AboboraState {
 	IDLE,
 	PATROL,
 	ATTACK
 }
 
-var state = AboboraState.PATROL
-
+var state = -1
 var direction = -1
 var player = null
 
@@ -21,69 +20,95 @@ func _ready():
 	detection.body_entered.connect(_on_body_entered)
 	detection.body_exited.connect(_on_body_exited)
 	attack_timer.timeout.connect(_on_attack_timer_timeout)
+	anim.animation_finished.connect(_on_animation_finished)
+
+	change_state(AboboraState.PATROL)
 
 func _physics_process(delta):
+	
+	print("Body: ", global_position)
+	print("Sprite: ", anim.global_position)
+	print("Collision: ", $Collisionabobora.global_position)
+	print("Detection: ", detection.global_position)
+	print("----------------")
 
 	if !is_on_floor():
 		velocity += get_gravity() * delta
 
 	match state:
 
-		AboboraState.IDLE:
-			idle()
-
 		AboboraState.PATROL:
-			patrol()
+			velocity.x = direction * SPEED
+
+			if is_on_wall():
+				direction *= -1
+
+		AboboraState.IDLE:
+			velocity.x = 0
 
 		AboboraState.ATTACK:
-			attack()
+			velocity.x = 0
+
+			if player:
+				anim.flip_h = player.global_position.x < global_position.x
 
 	update_sprite_direction()
 	move_and_slide()
-	
-func idle():
-	anim.play("Idle")
-	velocity.x = 0
-	
-func patrol():
 
-	anim.play("Run")
 
-	velocity.x = direction * SPEED
+func change_state(new_state):
 
-	if is_on_wall():
-		direction *= -1
+	if state == new_state:
+		return
 		
-func attack():
+	print("Mudando de", state, "para", new_state)
+	
+	state = new_state
 
-	velocity.x = 0
-	anim.play("Attack")
+	match state:
 
-	if player:
-		if player.global_position.x > global_position.x:
-			anim.flip_h = false
-		else:
-			anim.flip_h = true
+		AboboraState.PATROL:
+			anim.play("Run")
 
-	if attack_timer.is_stopped():
-		attack_timer.start()
-		
+		AboboraState.IDLE:
+			anim.play("Idle")
+			attack_timer.start(0.8)
+
+		AboboraState.ATTACK:
+			anim.play("attack")
+
+
 func _on_body_entered(body):
 
-	if body.is_in_group("Player"):
+	if body.is_in_group("player"):
 		player = body
-		state = AboboraState.ATTACK
-		
+		change_state(AboboraState.ATTACK)
+
+
 func _on_body_exited(body):
 
 	if body == player:
 		player = null
-		state = AboboraState.PATROL
-		
+		change_state(AboboraState.PATROL)
+
+
+func _on_animation_finished():
+	print("Terminou:", anim.animation)
+	
+	if anim.animation == "attack":
+
+		if player:
+			change_state(AboboraState.IDLE)
+		else:
+			change_state(AboboraState.PATROL)
+
+
 func _on_attack_timer_timeout():
 
 	if player:
-		print("Atacou!")
+		change_state(AboboraState.ATTACK)
+	else:
+		change_state(AboboraState.PATROL)
 
 func update_sprite_direction():
 
@@ -94,3 +119,6 @@ func update_sprite_direction():
 		anim.flip_h = false
 	elif velocity.x < 0:
 		anim.flip_h = true
+
+func attack():
+	print("ATAQUE")

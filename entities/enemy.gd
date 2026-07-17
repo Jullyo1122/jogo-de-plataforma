@@ -42,7 +42,6 @@ func update_sprite_direction():
 		$Animacaobat.flip_h = true
 		
 func patrol(delta):
-	print("Patrulhando")
 	time += delta
 
 	velocity.x = -speed
