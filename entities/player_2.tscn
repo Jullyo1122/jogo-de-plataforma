@@ -335,7 +335,7 @@ script = ExtResource("1_kr3fw")
 
 [node name="AnimacaoGirl" type="AnimatedSprite2D" parent="." unique_id=636558947]
 z_index = 2
-position = Vector2(40.6875, 28)
+position = Vector2(41.000004, 29)
 scale = Vector2(0.13437499, 0.14375004)
 sprite_frames = SubResource("SpriteFrames_dnlsw")
 animation = &"Demage"

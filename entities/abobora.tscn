@@ -158,7 +158,7 @@ position = Vector2(-3.8146973e-06, 0)
 scale = Vector2(0.96419275, 0.991211)
 sprite_frames = SubResource("SpriteFrames_tnt7l")
 animation = &"Run"
-offset = Vector2(-40, 0)
+offset = Vector2(-40, -2)
 
 [node name="Collisionabobora" type="CollisionShape2D" parent="." unique_id=575152712]
 rotation = 6.2831855
