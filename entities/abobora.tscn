@@ -157,7 +157,7 @@ script = ExtResource("1_ucvla")
 position = Vector2(-3.8146973e-06, 0)
 scale = Vector2(0.96419275, 0.991211)
 sprite_frames = SubResource("SpriteFrames_tnt7l")
-animation = &"Run"
+animation = &"Idle"
 offset = Vector2(-40, -2)
 
 [node name="Collisionabobora" type="CollisionShape2D" parent="." unique_id=575152712]
@@ -172,3 +172,6 @@ position = Vector2(-1, 0)
 shape = SubResource("CircleShape2D_nvt8n")
 
 [node name="AttackTimer" type="Timer" parent="." unique_id=468389767]
+
+[node name="WallDetector" type="RayCast2D" parent="." unique_id=1168296113]
+target_position = Vector2(-25, 0)

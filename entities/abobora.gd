@@ -5,7 +5,7 @@ const SPEED = 100.0
 @onready var anim: AnimatedSprite2D = $Animatedabobora
 @onready var detection: Area2D = $DetectionArea
 @onready var attack_timer: Timer = $AttackTimer
-
+@onready var wall_detector: RayCast2D = $WallDetector
 enum AboboraState {
 	IDLE,
 	PATROL,
@@ -34,14 +34,16 @@ func _physics_process(delta):
 
 	if !is_on_floor():
 		velocity += get_gravity() * delta
-
+		
 	match state:
 
 		AboboraState.PATROL:
 			velocity.x = direction * SPEED
-
-			if is_on_wall():
+			
+			if wall_detector.is_colliding():
 				direction *= -1
+				anim.flip_h = direction < 0
+				wall_detector.target_position.x *= -1
 
 		AboboraState.IDLE:
 			velocity.x = 0
@@ -101,7 +103,6 @@ func _on_animation_finished():
 			change_state(AboboraState.IDLE)
 		else:
 			change_state(AboboraState.PATROL)
-
 
 func _on_attack_timer_timeout():
 
