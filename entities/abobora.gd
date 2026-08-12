@@ -17,6 +17,8 @@ var direction = -1
 var player = null
 
 func _ready():
+	anim.flip_h = true
+	
 	detection.body_entered.connect(_on_body_entered)
 	detection.body_exited.connect(_on_body_exited)
 	attack_timer.timeout.connect(_on_attack_timer_timeout)
@@ -26,20 +28,14 @@ func _ready():
 
 func _physics_process(delta):
 	
-	print("Body: ", global_position)
-	print("Sprite: ", anim.global_position)
-	print("Collision: ", $Collisionabobora.global_position)
-	print("Detection: ", detection.global_position)
-	print("----------------")
-
 	if !is_on_floor():
 		velocity += get_gravity() * delta
-		
+
 	match state:
 
 		AboboraState.PATROL:
 			velocity.x = direction * SPEED
-			
+
 			if wall_detector.is_colliding():
 				direction *= -1
 				anim.flip_h = direction < 0
@@ -51,21 +47,16 @@ func _physics_process(delta):
 		AboboraState.ATTACK:
 			velocity.x = 0
 
-			if player:
-				anim.flip_h = player.global_position.x < global_position.x
-
 	update_sprite_direction()
 	move_and_slide()
 
 
 func change_state(new_state):
-
 	if state == new_state:
 		return
-		
-	print("Mudando de", state, "para", new_state)
-	
+
 	state = new_state
+	var attack_direction = 1
 
 	match state:
 
@@ -77,6 +68,14 @@ func change_state(new_state):
 			attack_timer.start(0.8)
 
 		AboboraState.ATTACK:
+			# É AQUI
+			if player:
+				attack_direction = sign(
+					player.global_position.x - global_position.x
+				)
+
+				anim.flip_h = attack_direction < 0
+
 			anim.play("attack")
 
 

@@ -182,18 +182,22 @@ radius = 8.0
 height = 24.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_nvt8n"]
-radius = 38.078865
+radius = 33.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xque0"]
+radius = 9.0
 
 [node name="abobora" type="CharacterBody2D" unique_id=1271816387]
 visibility_layer = 2
 script = ExtResource("1_ucvla")
 
 [node name="Animatedabobora" type="AnimatedSprite2D" parent="." unique_id=94778645]
-position = Vector2(38.999996, 2)
+z_index = 10
 scale = Vector2(0.96419275, 0.991211)
 sprite_frames = SubResource("SpriteFrames_tnt7l")
 animation = &"attack"
-offset = Vector2(-40, -2)
+frame = 5
+frame_progress = 0.40577525
 
 [node name="Collisionabobora" type="CollisionShape2D" parent="." unique_id=575152712]
 rotation = 6.2831855
@@ -210,3 +214,10 @@ shape = SubResource("CircleShape2D_nvt8n")
 
 [node name="WallDetector" type="RayCast2D" parent="." unique_id=1168296113]
 target_position = Vector2(-25, 0)
+
+[node name="Hitbox" type="Area2D" parent="." unique_id=1505368586]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=1923486908]
+position = Vector2(20, 4)
+shape = SubResource("CircleShape2D_xque0")
+debug_color = Color(0.9655281, 0, 0.4890753, 0.41960785)

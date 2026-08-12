@@ -323,7 +323,7 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1a1hd"]
-radius = 8.0
+radius = 9.0
 height = 36.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wvwgc"]
@@ -348,9 +348,9 @@ shape = SubResource("CapsuleShape2D_1a1hd")
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1278082462]
 position = Vector2(201, 104)
 limit_left = -239
-limit_top = -2
+limit_top = -400
 limit_right = 6792
-limit_bottom = 206
+limit_bottom = 290
 
 [node name="HitBox" type="Area2D" parent="." unique_id=2041996298]
 collision_layer = 2
