@@ -130,6 +130,7 @@ func _on_hit_box_area_entered(area):
 	print(area.name)
 	print(area.get_groups())
 
-	if area.is_in_group("enemy_attack"):
+	if area.is_in_group("enemy_attack") or area.is_in_group("abobora_attack"):
 		print("Tomou dano")
 		go_to_demage_state()
+	

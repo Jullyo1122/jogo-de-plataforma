@@ -335,14 +335,13 @@ script = ExtResource("1_kr3fw")
 
 [node name="AnimacaoGirl" type="AnimatedSprite2D" parent="." unique_id=636558947]
 z_index = 2
-position = Vector2(41.000004, 29)
+position = Vector2(3.8146973e-06, 0)
 scale = Vector2(0.13437499, 0.14375004)
 sprite_frames = SubResource("SpriteFrames_dnlsw")
 animation = &"Demage"
 autoplay = "Idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1651766809]
-position = Vector2(41, 27)
 shape = SubResource("CapsuleShape2D_1a1hd")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1278082462]
@@ -358,7 +357,6 @@ collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox" unique_id=59442140]
 visibility_layer = 2
-position = Vector2(41, 28)
 shape = SubResource("RectangleShape2D_wvwgc")
 debug_color = Color(0.96168846, 1.540184e-06, 0.51167804, 0.41960785)
 

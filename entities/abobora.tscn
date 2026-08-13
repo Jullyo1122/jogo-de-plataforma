@@ -192,7 +192,6 @@ visibility_layer = 2
 script = ExtResource("1_ucvla")
 
 [node name="Animatedabobora" type="AnimatedSprite2D" parent="." unique_id=94778645]
-z_index = 10
 scale = Vector2(0.96419275, 0.991211)
 sprite_frames = SubResource("SpriteFrames_tnt7l")
 animation = &"attack"
@@ -215,10 +214,9 @@ shape = SubResource("CircleShape2D_nvt8n")
 [node name="WallDetector" type="RayCast2D" parent="." unique_id=1168296113]
 target_position = Vector2(-25, 0)
 
-[node name="Hitbox" type="Area2D" parent="." unique_id=1505368586]
+[node name="Hitbox" type="Area2D" parent="." unique_id=1505368586 groups=["abobora_attack"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=1923486908]
-position = Vector2(-20, 0)
 shape = SubResource("CircleShape2D_xque0")
 disabled = true
 debug_color = Color(0.9655281, 0, 0.4890753, 0.41960785)

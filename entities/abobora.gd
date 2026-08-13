@@ -19,15 +19,18 @@ var direction = -1
 var player = null
 
 func _ready():
+	
 	anim.flip_h = true
 	
 	detection.body_entered.connect(_on_body_entered)
 	detection.body_exited.connect(_on_body_exited)
 	attack_timer.timeout.connect(_on_attack_timer_timeout)
 	anim.animation_finished.connect(_on_animation_finished)
+	
+	$Hitbox.add_to_group("abobora_attack")
 
 	change_state(AboboraState.PATROL)
-
+	
 func _physics_process(delta):
 	
 	if !is_on_floor():
@@ -77,11 +80,11 @@ func change_state(new_state):
 				if player.global_position.x < global_position.x:
 					print("Decisão: Player está na ESQUERDA")
 					anim.flip_h = true
-					$Hitbox.position.x = -30.0 # Move a Area2D inteira para a esquerda
+					$Hitbox.position.x = -20.0 # Move a Area2D inteira para a esquerda
 				else:
 					print("Decisão: Player está na DIREITA")
 					anim.flip_h = false
-					$Hitbox.position.x = 30.0  # Move a Area2D inteira para a direita
+					$Hitbox.position.x = 20.0  # Move a Area2D inteira para a direita
 				
 			anim.play("attack")
 			
@@ -137,3 +140,6 @@ func update_sprite_direction():
 
 func attack():
 	print("ATAQUE")
+
+
+	
